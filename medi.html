@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediTrap | Download</title>
+    <style>
+      :root {
+        --bg: #06101b;
+        --panel: rgba(9, 18, 31, 0.92);
+        --text: #eff7ff;
+        --muted: #cfe0ef;
+        --accent: #63f1da;
+        --accent-2: #8b7cff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(139, 124, 255, 0.18),
+            transparent 20%
+          ),
+          linear-gradient(135deg, #040b13 0%, #07111f 48%, #091624 100%);
+        display: grid;
+        place-items: center;
+        padding: 18px;
+      }
+
+      .card {
+        width: min(520px, 100%);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          145deg,
+          rgba(9, 18, 31, 0.96),
+          rgba(6, 13, 23, 0.98)
+        );
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        padding: 24px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(14px);
+      }
+
+      .card::before,
+      .card::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(18px);
+        opacity: 0.28;
+        animation: drift 8s alternate infinite ease-in-out;
+      }
+
+      .card::before {
+        width: 140px;
+        height: 140px;
+        background: #64f2d8;
+        top: -30px;
+        right: -30px;
+      }
+
+      .card::after {
+        width: 160px;
+        height: 160px;
+        background: #8b7cff;
+        bottom: -40px;
+        left: -40px;
+        animation-delay: -3s;
+      }
+
+      @keyframes drift {
+        from {
+          transform: translateY(0) translateX(0) scale(1);
+        }
+        to {
+          transform: translateY(-10px) translateX(10px) scale(1.05);
+        }
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        box-shadow: 0 10px 18px rgba(100, 242, 216, 0.24);
+        animation: pulse 2.4s infinite;
+      }
+
+      .logo-mark {
+        font-weight: 900;
+        color: #02111b;
+        font-size: 1.35rem;
+      }
+
+      .brand-text {
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.92rem;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+        line-height: 1.05;
+        position: relative;
+        z-index: 1;
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.55;
+        margin: 0 0 18px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+      }
+
+      .visual-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .mini-card {
+        flex: 1;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+      }
+
+      .mini-card img {
+        width: 100%;
+        height: 96px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .btn {
+        flex: 1 1 180px;
+        text-decoration: none;
+        text-align: center;
+        padding: 12px 14px;
+        border-radius: 14px;
+        font-weight: 800;
+        border: 1px solid transparent;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        color: #06212b;
+        background: linear-gradient(135deg, var(--accent), #c6fff7);
+        box-shadow: 0 12px 24px rgba(100, 242, 216, 0.25);
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .card {
+          padding: 18px;
+          border-radius: 18px;
+        }
+        .btn {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="card">
+      <div class="brand">
+        <img
+          src="image.png"
+          alt="MediTrap logo"
+          style="
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 10px 18px rgba(100, 242, 216, 0.18);
+          "
+        />
+        <span class="brand-text">MediTrap</span>
+      </div>
+
+      <h1>Click on download now button</h1>
+      <p>
+       Used meditrap in your phone to stay updated 
+      </p>
+
+      <div class="visual-row">
+      
+
+      <div class="cta">
+        <a class="btn btn-primary" href="meditap (2).apk" download="meditap (2).apk"
+          >⬇ Download Now</a
+        >
+      
+      </div>
+    </section>
+
+  </body>
+</html>
